@@ -1,0 +1,67 @@
+
+    <html>
+      <head>  <title>Software Status Page </title>
+       <meta charset="utf-8">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+          google.load("visualization", "1", {packages:["table"]});
+          google.setOnLoadCallback(drawTable);
+          function drawTable() {
+            var data = new google.visualization.DataTable();
+            data.addColumn("string", "Software");
+            data.addColumn("string", "Version");
+            data.addColumn("string", "Repository Link");
+            data.addColumn("string", "Reprocessing Information");
+            data.addColumn("string", "Released");
+            data.addColumn("string", "Author")
+            data.addRows([
+    ["testbot","0.0.1",'<a href="https://github.com/sosey/testbot/releases/tag/0.0.1">Code Repository</a>',`<p><strong>v0.0.1 Release for testbot</strong></p>
+<p>Below  is a table affected keywords, data whose keyword and value match those in this table area affected by the update.</p>
+<table>
+<thead><tr>
+<th>Keyword</th>
+<th>Description</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BIASFILE</td>
+<td>Bias reference files delivered to support code change</td>
+<td>&lt;filename&gt;</td>
+</tr>
+<tr>
+<td>SUBARRAY</td>
+<td>Only subarrays are affected</td>
+<td>True</td>
+</tr>
+<tr>
+<td>DETECTOR</td>
+<td>Which detector was used</td>
+<td>UVIS</td>
+</tr>
+<tr>
+<td>DATE-OBS</td>
+<td>Date that the data was observed</td>
+<td>&gt; Jan 01 2014</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>[x] Affects old data</li>
+<li>[x] Users should reprocess or re-retrieve affected datasets</li>
+<li>[ ] Something else with binary information </li>
+</ul>
+`,"2017-03-02T22:21:17Z",'<a href="https://avatars0.githubusercontent.com/u/503615?v=3">sosey</a>']
+  ]);
+    var table = new google.visualization.Table(document.getElementById("table_div"));
+    table.draw(data, {showRowNumber: true, allowHtml: true});
+    }
+    </script>
+    </head>
+    <body>
+
+    <br>Click on the column fields to sort
+    <div id="table_div"></div>
+    </body>
+    </html>
